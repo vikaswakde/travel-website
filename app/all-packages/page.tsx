@@ -1,10 +1,9 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function AllPackagesPage() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClientComponentClient();
   const { data: packages } = await supabase
     .from("popular_packages")
     .select("*")

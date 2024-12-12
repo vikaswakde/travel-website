@@ -1,11 +1,10 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import Image from "next/image";
 import { DeleteDestination } from "@/app/components/admin/DeleteDestination";
 
 export default async function DestinationsPage() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClientComponentClient();
   const { data: destinations } = await supabase
     .from("destinations")
     .select("*")

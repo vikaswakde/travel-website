@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getHeroDestinations } from "@/utils/supabase";
+import {} from "@/utils/supabase";
+import { getHeroDestinations } from "@/utils/supabaseClient";
 
 export async function FeaturedDestinations() {
   const destinations = await getHeroDestinations();

@@ -11,3 +11,37 @@ export async function getHeroImages() {
   if (error) throw error;
   return data;
 }
+export async function getHeroDestinations() {
+  const supabase = createClientComponentClient();
+  const { data, error } = await supabase
+    .from("destinations")
+    .select("*")
+    .eq("is_active", true)
+    .eq("show_in_hero", true)
+    .order("name");
+
+  if (error) throw error;
+  return data;
+}
+
+export async function getPopularPackages() {
+  const supabase = createClientComponentClient();
+  const { data, error } = await supabase
+    .from("popular_packages")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+export async function getApprovedTestimonials() {
+  const supabase = createClientComponentClient();
+  const { data, error } = await supabase
+    .from("testimonials")
+    .select("*")
+    .eq("status", "approved")
+    .order("created_at", { ascending: false });
+
+  if (error) throw error;
+  return data;
+}

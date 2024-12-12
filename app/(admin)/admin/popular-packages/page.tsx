@@ -1,15 +1,14 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import Link from 'next/link'
-import { DeletePopularPackage } from '@/app/components/admin/DeletePopularPackage'
-import type { PopularPackage } from '@/types'
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import Link from "next/link";
+import { DeletePopularPackage } from "@/app/components/admin/DeletePopularPackage";
+import type { PopularPackage } from "@/types";
 
 export default async function PopularPackagesPage() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createClientComponentClient();
   const { data: popularPackages } = await supabase
-    .from('popular_packages')
-    .select('*')
-    .order('created_at', { ascending: false })
+    .from("popular_packages")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   return (
     <div>
@@ -27,10 +26,18 @@ export default async function PopularPackagesPage() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Duration</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                Name
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                Duration
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                Price
+              </th>
+              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -54,5 +61,5 @@ export default async function PopularPackagesPage() {
         </table>
       </div>
     </div>
-  )
-} 
+  );
+}

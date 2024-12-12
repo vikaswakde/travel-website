@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { getPopularPackages } from "@/utils/supabase";
 import Link from "next/link";
+import { getPopularPackages } from "@/utils/supabaseClient";
 
 export default async function PopularPackages() {
   const popularPackages = await getPopularPackages();

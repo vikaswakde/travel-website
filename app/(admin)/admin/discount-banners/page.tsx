@@ -1,10 +1,10 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
 import Link from "next/link";
 import Image from "next/image";
 
 export default async function DiscountBannersPage() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClientComponentClient();
   const { data: banners } = await supabase
     .from("discount_banners")
     .select("*")
@@ -43,7 +43,9 @@ export default async function DiscountBannersPage() {
                   Status: {banner.active ? "Active" : "Inactive"}
                 </p>
                 {banner.link_url && (
-                  <p className="text-sm text-gray-500">Link: {banner.link_url}</p>
+                  <p className="text-sm text-gray-500">
+                    Link: {banner.link_url}
+                  </p>
                 )}
               </div>
             </div>
@@ -60,4 +62,4 @@ export default async function DiscountBannersPage() {
       </div>
     </div>
   );
-} 
+}

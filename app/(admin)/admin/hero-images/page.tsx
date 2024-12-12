@@ -1,15 +1,14 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import Link from 'next/link'
-import Image from 'next/image'
-import { DeleteHeroImage } from '@/app/components/admin/DeleteHeroImage'
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import Link from "next/link";
+import Image from "next/image";
+import { DeleteHeroImage } from "@/app/components/admin/DeleteHeroImage";
 
 export default async function HeroImagesPage() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createClientComponentClient();
   const { data: heroImages } = await supabase
-    .from('hero_images')
-    .select('*')
-    .order('display_order', { ascending: true })
+    .from("hero_images")
+    .select("*")
+    .order("display_order", { ascending: true });
 
   return (
     <div>
@@ -41,8 +40,8 @@ export default async function HeroImagesPage() {
                 <h3 className="font-semibold">{image.title}</h3>
                 <p className="text-sm text-gray-500">{image.subtitle}</p>
                 <p className="text-sm text-gray-500">
-                  Order: {image.display_order} | Status:{' '}
-                  {image.active ? 'Active' : 'Inactive'}
+                  Order: {image.display_order} | Status:{" "}
+                  {image.active ? "Active" : "Inactive"}
                 </p>
               </div>
             </div>
@@ -59,5 +58,5 @@ export default async function HeroImagesPage() {
         ))}
       </div>
     </div>
-  )
-} 
+  );
+}

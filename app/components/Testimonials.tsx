@@ -1,19 +1,7 @@
 "use client";
 import Image from "next/image";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-
-export async function getApprovedTestimonials() {
-  const supabase = createClientComponentClient();
-  const { data, error } = await supabase
-    .from("testimonials")
-    .select("*")
-    .eq("status", "approved")
-    .order("created_at", { ascending: false });
-
-  if (error) throw error;
-  return data;
-}
+import { getApprovedTestimonials } from "@/utils/supabaseClient";
 
 export async function Testimonials() {
   const testimonials = await getApprovedTestimonials();
