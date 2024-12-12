@@ -1,12 +1,7 @@
 "use client";
 import Image from "next/image";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  MessageCircle,
-} from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export async function getApprovedTestimonials() {
   const supabase = createClientComponentClient();
@@ -107,7 +102,7 @@ export async function Testimonials() {
           <button
             className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 focus:outline-none z-10"
             onClick={() => {
-              const container = document.querySelector(".flex");
+              const container = document.querySelector(".flex") as HTMLElement;
               if (container) {
                 container.scrollLeft += container.offsetWidth;
               }

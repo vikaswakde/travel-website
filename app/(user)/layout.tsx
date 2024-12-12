@@ -1,7 +1,7 @@
 import { Navbar } from "@/app/components/Navbar";
-import { Footer } from "@/app/components/Footer";
 import { WhatsAppButton } from "@/app/components/WhatsAppButton";
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 export default function UserLayout({
   children,

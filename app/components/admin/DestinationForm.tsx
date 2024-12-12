@@ -87,7 +87,6 @@ export function DestinationForm({
           images={formData.images}
           onImagesUpdate={(urls) => setFormData({ ...formData, images: urls })}
           endpoint="destinationImage"
-          maxFiles={5}
         />
       </div>
 

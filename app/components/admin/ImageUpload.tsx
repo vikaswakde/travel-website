@@ -10,7 +10,8 @@ type Props = {
     | "destinationImage"
     | "testimonialImage"
     | "packageImage"
-    | "heroImage";
+    | "heroImage"
+    | "bannerImage"
 };
 
 export function ImageUpload({ images, onImagesUpdate, endpoint }: Props) {

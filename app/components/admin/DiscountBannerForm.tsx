@@ -64,7 +64,6 @@ export function DiscountBannerForm({
             setFormData({ ...formData, image_url: urls[0] || "" })
           }
           endpoint="bannerImage"
-          maxFiles={1}
         />
       </div>
 
