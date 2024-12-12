@@ -55,7 +55,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none"
+            className="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none transition duration-200"
           >
             {!isOpen ? (
               <svg
