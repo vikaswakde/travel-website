@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 async function getActiveDiscountBanner() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClientComponentClient();
   const { data } = await supabase
     .from("discount_banners")
     .select("*")
