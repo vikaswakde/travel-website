@@ -4,6 +4,7 @@ import { getPopularPackages } from "@/utils/supabaseClient";
 
 export default async function PopularPackages() {
   const popularPackages = await getPopularPackages();
+  console.log("popular packages here =================", popularPackages);
 
   return (
     <section id="popular_packages" className="py-16 lg:py-24 bg-gray-50">

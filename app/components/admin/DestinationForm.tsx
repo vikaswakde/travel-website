@@ -3,15 +3,7 @@ import { useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { ImageUpload } from "./ImageUpload";
-
-type Destination = {
-  id: string;
-  name: string;
-  description: string;
-  images: string[];
-  show_in_hero: boolean;
-  is_active: boolean;
-};
+import { Destination } from "@/types";
 
 export function DestinationForm({
   mode,
@@ -29,6 +21,8 @@ export function DestinationForm({
     images: destination?.images || [],
     show_in_hero: destination?.show_in_hero || false,
     is_active: destination?.is_active ?? true,
+    location: destination?.location || "",
+    type: destination?.type || "international", // Default value added
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,6 +40,7 @@ export function DestinationForm({
       }
       router.refresh();
       router.push("/admin/destinations");
+      router.refresh();
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -82,7 +77,43 @@ export function DestinationForm({
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Images</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Location
+        </label>
+        <input
+          type="text"
+          required
+          value={formData.location}
+          onChange={(e) =>
+            setFormData({ ...formData, location: e.target.value })
+          }
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Type</label>
+        <select
+          required
+          value={formData.type}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              type: e.target.value as "international" | "national" | "regional",
+            })
+          }
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+        >
+          <option value="international">International</option>
+          <option value="national">National</option>
+          <option value="regional">Regional</option>
+        </select>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700">
+          Images
+        </label>
         <ImageUpload
           images={formData.images}
           onImagesUpdate={(urls) => setFormData({ ...formData, images: urls })}
@@ -101,7 +132,10 @@ export function DestinationForm({
             }
             className="rounded border-gray-300"
           />
-          <label htmlFor="show_in_hero" className="text-sm font-medium text-gray-700">
+          <label
+            htmlFor="show_in_hero"
+            className="text-sm font-medium text-gray-700"
+          >
             Show in Hero Section
           </label>
         </div>
@@ -116,7 +150,10 @@ export function DestinationForm({
             }
             className="rounded border-gray-300"
           />
-          <label htmlFor="is_active" className="text-sm font-medium text-gray-700">
+          <label
+            htmlFor="is_active"
+            className="text-sm font-medium text-gray-700"
+          >
             Active (Show in All Destinations)
           </label>
         </div>

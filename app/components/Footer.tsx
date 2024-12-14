@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold text-primary-400 mb-6">
-              TravelScape
+              Suparnam Holidays
             </h3>
             <p className="text-gray-400 mb-6">
               Your trusted partner for unforgettable travel experiences and
@@ -35,7 +35,7 @@ const Footer = () => {
                 <i className="fab fa-instagram"></i>
               </a>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/9175982377"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
               >
@@ -144,11 +144,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-400">
                 <i className="fas fa-map-marker-alt mt-1"></i>
-                <span>123 Travel Street, Tourism City, TC 12345</span>
+                <span>
+                  211/1557 NR Shani Mandir, Sant Tukaram Nagar, Pimpri Pune 18
+                </span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <i className="fas fa-phone"></i>
-                <span>+1 234 567 8900</span>
+                <span>+91 9175982377</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <i className="fas fa-phone"></i>
+                <span>+91 9823025308</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <i className="fas fa-envelope"></i>
@@ -158,10 +164,9 @@ const Footer = () => {
           </div>
         </div>
 
- 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>© 2024 TravelScape. All rights reserved.</p>
+          <p>© 2024 Suparnam Holidays. All rights reserved.</p>
         </div>
       </div>
     </footer>

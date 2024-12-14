@@ -3,6 +3,8 @@ import Link from "next/link";
 import { DeletePopularPackage } from "@/app/components/admin/DeletePopularPackage";
 import type { PopularPackage } from "@/types";
 
+export const revalidate = 0;
+
 export default async function PopularPackagesPage() {
   const supabase = createClientComponentClient();
   const { data: popularPackages } = await supabase

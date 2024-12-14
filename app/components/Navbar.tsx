@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
@@ -9,9 +10,13 @@ export function Navbar() {
       <div className="relative">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-primary-600">
-              TravelScape
-            </a>
+            <Image
+              src="/s.png"
+              alt="TravelScape Logo"
+              width={80}
+              height={80}
+              className="text-2xl font-bold text-primary-600 object-cover"
+            />
           </div>
 
           {/* Desktop Navigation */}

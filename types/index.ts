@@ -7,6 +7,8 @@ export type Destination = {
   images: string[]
   created_at: string
   updated_at: string
+  show_in_hero: boolean;
+  is_active: boolean;
 }
 
 export type Testimonial = {

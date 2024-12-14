@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 
 const BookNow = () => {
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+
   return (
     <section
       id="contact_whatsapp"
@@ -73,7 +75,7 @@ const BookNow = () => {
 
               <div className="mt-10">
                 <a
-                  href="https://wa.me/1234567890"
+                  href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
                   className="inline-flex items-center justify-center w-full gap-4 bg-green-700 text-white px-8 py-4 rounded-full hover:bg-green-800 transition-colors"
                 >
@@ -118,7 +120,7 @@ const BookNow = () => {
         {/* Quick Contact Options */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <a
-            href="tel:+1234567890"
+            href={`tel:${whatsappNumber}`}
             className="flex items-center gap-4 bg-white p-4 rounded-xl hover:bg-primary-50 transition-colors"
           >
             <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
@@ -126,12 +128,12 @@ const BookNow = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-900">Call Us</p>
-              <p className="text-sm text-gray-600">+123 456 7890</p>
+              <p className="text-sm text-gray-600">+91 9175982377</p>
             </div>
           </a>
 
           <a
-            href="mailto:info@travelscape.com"
+            href="mailto:info@suparnam-holidays.com"
             className="flex items-center gap-4 bg-white p-4 rounded-xl hover:bg-primary-50 transition-colors"
           >
             <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
@@ -139,7 +141,9 @@ const BookNow = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-900">Email Us</p>
-              <p className="text-sm text-gray-600">info@travelscape.com</p>
+              <p className="text-sm text-gray-600">
+                info@suparnam-holidays.com
+              </p>
             </div>
           </a>
 
@@ -152,7 +156,10 @@ const BookNow = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-900">Visit Us</p>
-              <p className="text-sm text-gray-600">123 Travel Street</p>
+              <p className="text-sm text-gray-600">
+                {" "}
+                211/1557 NR Shani Mandir, <br /> Sant Tukaram Nagar, Pimpri
+              </p>
             </div>
           </a>
         </div>

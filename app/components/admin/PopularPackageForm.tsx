@@ -39,6 +39,7 @@ export function PopularPackageForm({
       }
       router.refresh();
       router.push("/admin/popular-packages");
+      router.refresh();
     } catch (error) {
       console.error("Error:", error);
     } finally {
