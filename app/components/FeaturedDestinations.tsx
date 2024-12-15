@@ -17,7 +17,9 @@ export async function FeaturedDestinations() {
       }
     );
 
-    const destinations: Destination[] = res.data; // Axios automatically parses JSON
+    const destinations: Destination[] = res.data.filter(
+      (destination) => destination.show_in_hero
+    ); // Filter for active destinations
 
     return (
       <section id="featured_destinations" className="bg-white py-16 lg:py-24">

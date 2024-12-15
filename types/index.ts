@@ -2,7 +2,6 @@ export type Destination = {
   id: string;
   name: string;
   description: string;
-  type: "international" | "national" | "regional";
   location: string;
   images: string[];
   created_at: string;
@@ -47,20 +46,20 @@ export type Testimonial = {
   created_at: string;
 };
 
-export interface PopularPackage {
-  id: string;
-  name: string;
-  description: string;
-  duration: string;
-  price: number;
-  image_url: string;
-  amenities: Array<{
-    icon: string;
-    text: string;
-  }>;
-  created_at: string;
-  updated_at: string;
-}
+// export interface PopularPackage {
+//   id: string;
+//   name: string;
+//   description: string;
+//   duration: string;
+//   price: number;
+//   image_url: string;
+//   amenities: Array<{
+//     icon: string;
+//     text: string;
+//   }>;
+//   created_at: string;
+//   updated_at: string;
+// }
 
 export interface HeroImage {
   id: string;

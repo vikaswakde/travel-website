@@ -1,6 +1,7 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import Link from "next/link";
+
 export const revalidate = 0;
 export default async function AllDestinationsPage() {
   const supabase = createClientComponentClient();
@@ -53,7 +54,7 @@ export default async function AllDestinationsPage() {
                   src={destination.images[0]}
                   alt={destination.name}
                   fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover object-center group-hover:scale-100 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
