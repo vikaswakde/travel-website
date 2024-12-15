@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { Destination } from "@/types"; // Importing the Destination type
 
+export const revalidate = 0;
 export async function FeaturedDestinations() {
   try {
     const res = await axios.get<Destination[]>(
