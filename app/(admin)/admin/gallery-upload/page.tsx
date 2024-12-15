@@ -4,6 +4,7 @@ import { Gallery } from "@/types";
 import axios from "axios";
 import { DeleteGallery } from "@/app/components/admin/DeleteGallery";
 
+export const revalidate = 0;
 export default async function GalleryUploadPage() {
   try {
     const res = await axios.get<Gallery[]>(
