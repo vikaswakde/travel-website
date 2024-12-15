@@ -8,10 +8,12 @@ type Props = {
   onImagesUpdate: (urls: string[]) => void;
   endpoint:
     | "destinationImage"
+    | "internationalDestinationImage"
     | "testimonialImage"
     | "packageImage"
     | "heroImage"
     | "bannerImage"
+    | "galleryImage";
 };
 
 export function ImageUpload({ images, onImagesUpdate, endpoint }: Props) {

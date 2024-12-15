@@ -18,9 +18,13 @@ export function AdminSidebar() {
     { href: "/admin", label: "Dashboard" },
     { href: "/admin/hero-images", label: "Hero Images" },
     { href: "/admin/discount-banners", label: "Discount Banner" },
-    { href: "/admin/destinations", label: "Destinations" },
+    { href: "/admin/destinations", label: "Regional Destinations" },
+    {
+      href: "/admin/international-destinations",
+      label: "International Destinations",
+    },
     { href: "/admin/testimonials", label: "Testimonials" },
-    { href: "/admin/popular-packages", label: "Popular Packages" },
+    { href: "/admin/gallery-upload", label: "Gallery" },
   ];
 
   return (

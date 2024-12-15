@@ -1,24 +1,42 @@
 export type Destination = {
-  id: string
-  name: string
-  description: string
-  type: 'international' | 'national' | 'regional'
-  location: string
-  images: string[]
-  created_at: string
-  updated_at: string
+  id: string;
+  name: string;
+  description: string;
+  type: "international" | "national" | "regional";
+  location: string;
+  images: string[];
+  created_at: string;
+  updated_at: string;
   show_in_hero: boolean;
   is_active: boolean;
-}
+};
+export type Gallery = {
+  id: string; // UUID
+  destination_name: string;
+  images: string[]; // Array of image URLs
+  created_at: string; // Timestamp with time zone
+};
+
+export type InternationalDestination = {
+  id: string;
+  name: string;
+  description: string;
+  location: string;
+  images: string[];
+  show_in_hero: boolean;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+};
 
 export type Testimonial = {
-  id: string
-  name: string
-  comment: string
-  rating: number
-  image: string
-  created_at: string
-} 
+  id: string;
+  name: string;
+  comment: string;
+  rating: number;
+  image: string;
+  created_at: string;
+};
 
 export interface PopularPackage {
   id: string;

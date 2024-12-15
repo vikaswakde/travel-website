@@ -2,7 +2,9 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 import Link from "next/link";
 import Image from "next/image";
+import { DeleteDiscount } from "@/app/components/admin/DeleteDiscount";
 
+export const revalidate = 0;
 export default async function DiscountBannersPage() {
   const supabase = createClientComponentClient();
   const { data: banners } = await supabase
@@ -50,12 +52,13 @@ export default async function DiscountBannersPage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Link
+              {/* <Link
                 href={`/admin/discount-banners/${banner.id}`}
                 className="text-blue-600 hover:text-blue-900"
               >
                 Edit
-              </Link>
+              </Link> */}
+              <DeleteDiscount id={banner.id} />
             </div>
           </div>
         ))}

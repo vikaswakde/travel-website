@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { DeleteHeroImage } from "@/app/components/admin/DeleteHeroImage";
 
+export const revalidate = 0;
 export default async function HeroImagesPage() {
   const supabase = createClientComponentClient();
   const { data: heroImages } = await supabase

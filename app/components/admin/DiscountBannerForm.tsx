@@ -45,6 +45,7 @@ export function DiscountBannerForm({
       }
       router.refresh();
       router.push("/admin/discount-banners");
+      router.refresh();
     } catch (error) {
       console.error("Error:", error);
     } finally {

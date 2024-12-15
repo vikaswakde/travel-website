@@ -2,7 +2,7 @@ import { Hero } from "@/app/components/Hero";
 import { FeaturedDestinations } from "@/app/components/FeaturedDestinations";
 import { Testimonials } from "@/app/components/Testimonials";
 import { Navbar } from "../components/Navbar";
-import PopularPackages from "../components/PopularPackages";
+import PopularPackages from "../components/InternationalDestinations";
 import OurServices from "../components/OurServices";
 import BookNow from "../components/BookNow";
 import Footer from "../components/Footer";

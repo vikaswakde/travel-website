@@ -1,13 +1,29 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { InternationalDestination } from "@/types"; // Import the type
+import { Loader2 } from "lucide-react";
+
 export const revalidate = 0;
-export default async function AllDestinationsPage() {
+export default async function AllInternationalDestinationsPage() {
   const supabase = createClientComponentClient();
-  const { data: destinations } = await supabase
-    .from("destinations")
+  const { data: destinations, error } = await supabase
+    .from("international")
     .select("*")
     .order("name", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching destinations:", error);
+    return <div>Error loading destinations.</div>;
+  }
+
+  if (!destinations) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-10 h-10 animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
@@ -35,58 +51,47 @@ export default async function AllDestinationsPage() {
             </Link>
           </div>
           <h1 className="text-3xl lg:text-4xl font-bold text-[#00145A] mb-4">
-            All Destinations
+            All International Destinations
           </h1>
           <p className="text-gray-600">
-            Explore our complete collection of handpicked destinations
+            Browse through our complete collection of international destinations
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {destinations?.map((destination) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {destinations.map((destination: InternationalDestination) => (
             <div
               key={destination.id}
-              className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group rounded-xl overflow-hidden flex flex-col shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative">
                 <Image
-                  src={destination.images[0]}
-                  alt={destination.name}
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  src={destination.images[0]} // Assuming the first image is used
+                  alt={`${destination.name} Destination`}
+                  width={600}
+                  height={400}
+                  className="h-48 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {destination.name}
                 </h3>
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                <p className="text-gray-600 mb-4 flex-1">
                   {destination.description}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                   <Link
-                    href={`/client-destinations/${destination.id}`}
-                    className="inline-flex items-center text-[#00145A] font-medium text-sm"
+                    href={`/client-international/${destination.id}`}
+                    className="text-[#00145A] font-medium hover:text-primary-700"
                   >
                     View Details
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
                   </Link>
                   <a
-                    href={`https://wa.me/1234567890?text=I'm interested in ${destination.name}`}
+                    href={`https://wa.me/1234567890?text=I'm interested in ${destination.name} destination`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full text-white transition-colors"
+                    className="inline-flex items-center justify-center h-10 w-10 bg-green-500 hover:bg-green-600 rounded-full text-white transition-colors"
                   >
                     <svg
                       className="w-5 h-5"

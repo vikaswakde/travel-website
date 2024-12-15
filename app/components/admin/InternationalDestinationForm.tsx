@@ -30,15 +30,15 @@ export function DestinationForm({
 
     try {
       if (mode === "create") {
-        await supabase.from("destinations").insert([formData]);
+        await supabase.from("international").insert([formData]);
       } else if (destination?.id) {
         await supabase
-          .from("destinations")
+          .from("international")
           .update(formData)
           .eq("id", destination.id);
       }
       router.refresh();
-      router.push("/admin/destinations");
+      router.push("/admin/international-destinations");
       router.refresh();
     } catch (error) {
       console.error("Error:", error);
@@ -97,7 +97,7 @@ export function DestinationForm({
         <ImageUpload
           images={formData.images}
           onImagesUpdate={(urls) => setFormData({ ...formData, images: urls })}
-          endpoint="destinationImage"
+          endpoint="internationalDestinationImage"
         />
       </div>
 

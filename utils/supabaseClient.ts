@@ -24,16 +24,17 @@ export async function getHeroDestinations() {
   return data;
 }
 
-export async function getPopularPackages() {
+export async function getPopularInternational() {
   const supabase = createClientComponentClient();
   const { data, error } = await supabase
-    .from("popular_packages")
+    .from("international")
     .select("*")
     .order("created_at", { ascending: false });
 
   if (error) throw error;
   return data;
 }
+
 export async function getApprovedTestimonials() {
   const supabase = createClientComponentClient();
   const { data, error } = await supabase
