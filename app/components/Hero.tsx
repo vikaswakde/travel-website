@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { getHeroImages } from "@/utils/supabaseClient";
 
+export const revalidate = 0;
 export function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
   const [heroImages, setHeroImages] = useState<any[]>([]);

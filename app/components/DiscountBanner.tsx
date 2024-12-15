@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
+export const revalidate = 0;
 async function getActiveDiscountBanner() {
   const supabase = createClientComponentClient();
   const { data } = await supabase
