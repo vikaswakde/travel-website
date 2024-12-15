@@ -58,6 +58,23 @@ export default function AdminTestimonialsPage() {
     }
   };
 
+  const handleRemoveTestimonial = async (id: string) => {
+    setLoading(true);
+    try {
+      const { error } = await supabase
+        .from("testimonials")
+        .delete()
+        .eq("id", id);
+
+      if (error) throw error;
+      await fetchTestimonials();
+    } catch (error) {
+      console.error("Error removing testimonial:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     <div className="flex items-start gap-4">
       <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
@@ -144,6 +161,15 @@ export default function AdminTestimonialsPage() {
             .map((testimonial) => (
               <div key={testimonial.id} className="border rounded-lg p-4">
                 <TestimonialCard testimonial={testimonial} />
+                <div className="flex justify-end mt-2">
+                  <button
+                    onClick={() => handleRemoveTestimonial(testimonial.id)}
+                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors disabled:opacity-50"
+                    disabled={loading}
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             ))}
           {testimonials.filter((t) => t.status === "approved").length === 0 && (
