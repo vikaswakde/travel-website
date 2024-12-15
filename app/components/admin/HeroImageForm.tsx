@@ -39,6 +39,7 @@ export function HeroImageForm({
       }
       router.refresh();
       router.push("/admin/hero-images");
+      router.refresh();
     } catch (error) {
       console.error("Error:", error);
     } finally {
