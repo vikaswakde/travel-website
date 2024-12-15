@@ -23,37 +23,37 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-8 ">
             <a
               href="/admin"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               Admin
             </a>
             <a
               href="#"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               Home
             </a>
             <a
               href="#featured_destinations"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               Destinations
             </a>
             <a
               href="#international_destinations"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               International
             </a>
             <a
               href="/gallery"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               Gallery
             </a>
             <a
               href="#contact_whatsapp"
-              className="text-gray-600 hover:text-primary-600 transition-colors"
+              className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
             >
               Contact
             </a>
@@ -105,35 +105,35 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="lg:hidden  top-[1rem] shadow-lg p-4 ">
+          <div className="lg:hidden top-[1rem] shadow-lg p-4 ">
             <div className="flex flex-col space-y-4">
               <a
                 href="#"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
                 Home
               </a>
               <a
                 href="#featured_destinations"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
                 Destinations
               </a>
               <a
                 href="#popular_packages"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
                 Packages
               </a>
               <a
                 href="#travel_services"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
                 Services
               </a>
               <a
                 href="#contact_whatsapp"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
                 Contact
               </a>

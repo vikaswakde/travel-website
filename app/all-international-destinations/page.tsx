@@ -25,6 +25,8 @@ export default async function AllInternationalDestinationsPage() {
     );
   }
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; // Fetching WhatsApp number from .env
+
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -77,7 +79,7 @@ export default async function AllInternationalDestinationsPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {destination.name}
                 </h3>
-                <p className="text-gray-600 mb-4 flex-1">
+                <p className="text-gray-600 mb-4 flex-1 line-clamp-3">
                   {destination.description}
                 </p>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
@@ -88,7 +90,7 @@ export default async function AllInternationalDestinationsPage() {
                     View Details
                   </Link>
                   <a
-                    href={`https://wa.me/1234567890?text=I'm interested in ${destination.name} destination`}
+                    href={`https://wa.me/${whatsappNumber}?text=I'm interested in ${destination.name} destination`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center h-10 w-10 bg-green-500 hover:bg-green-600 rounded-full text-white transition-colors"

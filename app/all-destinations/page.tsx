@@ -10,6 +10,8 @@ export default async function AllDestinationsPage() {
     .select("*")
     .order("name", { ascending: true });
 
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; // Fetching WhatsApp number from .env
+
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -84,7 +86,7 @@ export default async function AllDestinationsPage() {
                     </svg>
                   </Link>
                   <a
-                    href={`https://wa.me/1234567890?text=I'm interested in ${destination.name}`}
+                    href={`https://wa.me/${whatsappNumber}?text=I'm interested in ${destination.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full text-white transition-colors"

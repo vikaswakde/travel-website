@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { InternationalDestination } from "@/types"; // Import the type
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; // Fetching WhatsApp number from .env
+
 export default function InternationalDestinationDetails({
   params,
 }: {
@@ -146,7 +148,7 @@ export default function InternationalDestinationDetails({
                   Book Now
                 </button>
                 <a
-                  href={`https://wa.me/1234567890?text=I'm interested in visiting ${destination.name}`}
+                  href={`https://wa.me/${whatsappNumber}?text=I'm interested in visiting ${destination.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-semibold"

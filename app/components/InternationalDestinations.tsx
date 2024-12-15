@@ -41,13 +41,12 @@ export default async function InternationalDestinations() {
                 key={pkg.id}
                 className="group bg-white rounded-xl overflow-hidden flex flex-col border shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="relative">
+                <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={pkg.images[0]} // Assuming the first image is used
                     alt={`${pkg.name} Package`}
-                    width={600}
-                    height={400}
-                    className="h-48 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover object-center group-hover:scale-100 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -55,7 +54,9 @@ export default async function InternationalDestinations() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {pkg.name}
                   </h3>
-                  <p className="text-gray-600 mb-4 flex-1">{pkg.description}</p>
+                  <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                    {pkg.description}
+                  </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                     <Link
                       href={`/client-international/${pkg.id}`}
@@ -64,7 +65,7 @@ export default async function InternationalDestinations() {
                       View Details
                     </Link>
                     <a
-                      href="https://wa.me/1234567890"
+                      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center h-8 w-8 text-green"
