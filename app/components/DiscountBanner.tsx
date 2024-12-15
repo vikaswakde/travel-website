@@ -41,7 +41,7 @@ export function DiscountBanner() {
   if (!banner) return null;
 
   const BannerContent = () => (
-    <div className="relative w-[80%] h-[20rem] mx-auto rounded-xl overflow-hidden">
+    <div className="relative w-[80%] h-[13rem] md:h-[22rem] mx-auto rounded-xl overflow-hidden">
       <Image
         src={banner.image_url}
         alt={banner.title || "Discount Offer"}

@@ -133,7 +133,7 @@ const BookNow = () => {
           </a>
 
           <a
-            href="mailto:info@suparnam-holidays.com"
+            href="mailto:suparnamholidays24@gmail.com"
             className="flex items-center gap-4 bg-white p-4 rounded-xl hover:bg-primary-50 transition-colors"
           >
             <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
@@ -142,7 +142,7 @@ const BookNow = () => {
             <div>
               <p className="font-semibold text-gray-900">Email Us</p>
               <p className="text-sm text-gray-600">
-                info@suparnam-holidays.com
+                suparnamholidays24@gmail.com
               </p>
             </div>
           </a>

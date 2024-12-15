@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,26 +29,28 @@ const Footer = () => {
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <i className="fab fa-facebook-f"></i>
+                <Facebook />
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <i className="fab fa-twitter"></i>
+                <Twitter />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/suparnam_holidays?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <i className="fab fa-instagram"></i>
+                <Instagram />
               </a>
               <a
                 href="https://wa.me/9175982377"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <i className="fab fa-whatsapp"></i>
+                <MessageCircle />
               </a>
             </div>
           </div>
@@ -143,22 +154,48 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-400">
-                <i className="fas fa-map-marker-alt mt-1"></i>
+                <MapPin className="mt-1" />
                 <span>
                   211/1557 NR Shani Mandir, Sant Tukaram Nagar, Pimpri Pune 18
                 </span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <i className="fas fa-phone"></i>
+                <Phone />
                 <span>+91 9175982377</span>
+                <a href="tel:+919175982377" className="sr-only">
+                  Call +91 9175982377
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <i className="fas fa-phone"></i>
+                <Phone />
                 <span>+91 9823025308</span>
+                <a href="tel:+919823025308" className="sr-only">
+                  Call +91 9823025308
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <i className="fas fa-envelope"></i>
-                <span>info@travelscape.com</span>
+                <Mail />
+                <span>
+                  <a
+                    href="mailto:suparnamholidays24@gmail.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    suparnamholidays24@gmail.com
+                  </a>
+                </span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Instagram />
+                <span>
+                  <a
+                    href="https://www.instagram.com/suparnam_holidays?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </span>
               </li>
             </ul>
           </div>
