@@ -1,11 +1,15 @@
+"use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { DiscountBanner as DiscountBannerType } from "@/types";
 
 export const revalidate = 0;
+
 async function getActiveDiscountBanner() {
   const supabase = createClientComponentClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("discount_banners")
     .select("*")
     .eq("active", true)
@@ -13,12 +17,32 @@ async function getActiveDiscountBanner() {
     .limit(1)
     .single();
 
+  if (error) {
+    console.error("Error fetching discount banner:", error);
+    return null;
+  }
+
   return data;
 }
 
-export async function DiscountBanner() {
-  const banner = await getActiveDiscountBanner();
+export function DiscountBanner() {
+  const [banner, setBanner] = useState<DiscountBannerType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchBanner = async () => {
+      const fetchedBanner = await getActiveDiscountBanner();
+      if (fetchedBanner) {
+        setBanner(fetchedBanner);
+      }
+      setLoading(false);
+    };
+
+    fetchBanner();
+  }, []);
+
+  if (error) return <p>{error}</p>;
   if (!banner) return null;
 
   const BannerContent = () => (

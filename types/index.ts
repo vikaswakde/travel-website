@@ -16,6 +16,15 @@ export type Gallery = {
   images: string[]; // Array of image URLs
   created_at: string; // Timestamp with time zone
 };
+export type DiscountBanner = {
+  id: string; // UUID
+  image_url: string; // URL of the banner image
+  title?: string; // Optional title for the banner
+  link_url?: string; // Optional link for the banner
+  active?: boolean; // Indicates if the banner is active
+  created_at: string; // Timestamp with time zone
+  updated_at: string; // Timestamp with time zone
+};
 
 export type InternationalDestination = {
   id: string;
