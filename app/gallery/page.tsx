@@ -59,7 +59,7 @@ export default async function GalleryPage() {
               {gallery.images.map((image: string, index: number) => (
                 <div
                   key={index}
-                  className="relative h-48 rounded-lg overflow-hidden shadow-md"
+                  className="relative h-72 rounded-lg overflow-hidden shadow-md"
                 >
                   <Image
                     src={image}
