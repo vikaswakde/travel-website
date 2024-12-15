@@ -91,7 +91,7 @@ export async function FeaturedDestinations() {
         <div className="text-center mt-12">
           <Link
             href="/all-destinations"
-            className="text-gray-600 font-medium bg-secondary px-8 py-3 rounded-full hover:bg-primary-700 transition-colors"
+            className="text-gray-900 font-medium bg-[#8CC23D] px-8 py-3 rounded-full hover:bg-primary-700 transition-colors shadow-sm"
           >
             View All Destinations
           </Link>

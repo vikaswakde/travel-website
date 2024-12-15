@@ -136,7 +136,7 @@ export function Testimonials() {
         <div className="mt-12 text-center">
           <a
             href="#testimonial_sub"
-            className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-3 rounded-full hover:bg-green-600 transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-[#8CC23D] text-gray-900 px-8 py-3 rounded-full hover:bg-green-600 transition-colors"
           >
             <span>Share Your Experience</span>
           </a>

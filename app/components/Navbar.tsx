@@ -8,19 +8,25 @@ export function Navbar() {
   return (
     <section id="navbar_hero" className="relative ">
       <div className="relative">
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <nav className="container mx-auto px-4 py-8 flex justify-between items-center">
           <div className="flex items-center">
             <Image
               src="/s.png"
               alt="TravelScape Logo"
-              width={80}
-              height={80}
-              className="text-2xl font-bold text-primary-600 object-cover"
+              width={150}
+              height={150}
+              className="text-2xl font-bold w-[6rem] h-[6rem] md:h-[9.3rem] md:w-[9.3rem] text-primary-600 object-cover absolute md:-top-6"
             />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 ">
+            <a
+              href="/admin"
+              className="text-gray-600 hover:text-primary-600 transition-colors"
+            >
+              Admin
+            </a>
             <a
               href="#"
               className="text-gray-600 hover:text-primary-600 transition-colors"
@@ -51,9 +57,12 @@ export function Navbar() {
             >
               Contact
             </a>
-            <button className="bg-primary-600 px-6 py-2 rounded-full hover:bg-primary-700 transition-colors">
+            <a
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+              className="bg-[#8CC23D] px-6 py-2 rounded-full hover:bg-primary-700 transition-colors"
+            >
               Book Now
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -128,9 +137,13 @@ export function Navbar() {
               >
                 Contact
               </a>
-              <button className="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors w-full">
+
+              <a
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                className="bg-primary-600 px-6 py-2 rounded-full hover:bg-primary-700 transition-colors"
+              >
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
         )}

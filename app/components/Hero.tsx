@@ -48,13 +48,13 @@ export function Hero() {
             >
               <a
                 href="#featured_destinations"
-                className="bg-primary-600 border bg-blue-200 px-8 py-3 rounded-full hover:bg-primary-700 transition-colors text-center"
+                className="bg-primary-600 border bg-[#8CC23D] px-8 py-3 rounded-full hover:bg-primary-700 transition-colors text-center"
               >
                 Explore Destinations
               </a>
               <a
                 href="#popular_packages"
-                className="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-full hover:bg-primary-50 transition-colors text-center"
+                className="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-full hover:bg-blue-200 transition-colors text-center"
               >
                 View Packages
               </a>
