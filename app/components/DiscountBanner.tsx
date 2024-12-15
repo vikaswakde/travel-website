@@ -27,8 +27,6 @@ async function getActiveDiscountBanner() {
 
 export function DiscountBanner() {
   const [banner, setBanner] = useState<DiscountBannerType | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBanner = async () => {
@@ -36,13 +34,10 @@ export function DiscountBanner() {
       if (fetchedBanner) {
         setBanner(fetchedBanner);
       }
-      setLoading(false);
     };
-
     fetchBanner();
   }, []);
 
-  if (error) return <p>{error}</p>;
   if (!banner) return null;
 
   const BannerContent = () => (
