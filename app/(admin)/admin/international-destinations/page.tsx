@@ -4,6 +4,7 @@ import { Destination } from "@/types";
 import axios from "axios";
 import { DeleteDestination } from "@/app/components/admin/InternationalDeleteDestination";
 
+export const revalidate = 0;
 export default async function InternationalDestinationsPage() {
   try {
     const res = await axios.get<Destination[]>(
