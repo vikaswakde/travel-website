@@ -31,9 +31,12 @@ export function Hero() {
   return (
     <section id="navbar_hero" className="relative  min-h-screen py-[10rem]">
       <div className="w-full mx-auto absolute top-0  rounded-3xl text-black">
-        <h2 className="text-center text-4xl md:text-[3.2rem] font-bold pt-[5rem]">
+        <h2 className="text-center text-4xl md:text-[3.2rem] font-bold pt-[5rem] md:py-0">
           Welcome to
-          <span className="bg-yellow-400 p-1 ml-1 rounded-sm shadow-md">
+          <span className="md:hidden">
+            <br />
+          </span>
+          <span className="bg-yellow-400 pl-1 pr-1 pb-1 pt-[2px] md:p-1 ml-1 rounded-sm shadow-md md:mt-0 ">
             Suparnam Holidays!
           </span>
         </h2>
