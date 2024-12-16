@@ -120,16 +120,16 @@ export function Navbar() {
                 Destinations
               </a>
               <a
-                href="#popular_packages"
+                href="#international_destinations"
                 className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
-                Packages
+                International
               </a>
               <a
-                href="#travel_services"
+                href="/gallery"
                 className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
-                Services
+                gallery
               </a>
               <a
                 href="#contact_whatsapp"
