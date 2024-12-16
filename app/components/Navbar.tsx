@@ -129,7 +129,7 @@ export function Navbar() {
                 href="/gallery"
                 className="text-gray-600 hover:text-primary-600 transition-colors hover:underline"
               >
-                gallery
+                Gallery
               </a>
               <a
                 href="#contact_whatsapp"

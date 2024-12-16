@@ -1,27 +1,67 @@
+"use client"; // Marking this component as a client component
+
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
-export const revalidate = 0;
-export default async function GalleryPage() {
+export default function GalleryPage() {
   const supabase = createClientComponentClient();
-  const { data: galleries, error } = await supabase
-    .from("galleries")
-    .select("*")
-    .order("created_at", { ascending: false });
+  const [galleries, setGalleries] = useState<Gallery[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  if (error) {
-    console.error("Error fetching galleries:", error);
+  interface Gallery {
+    id: number;
+    destination_name: string;
+    images: string[];
+  }
+
+  const fetchGalleries = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("galleries")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching galleries:", error);
+      setError("Failed to load galleries. Please try again later.");
+    } else {
+      setGalleries(data);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchGalleries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) {
     return (
-      <p className="text-red-500">
-        Failed to load galleries. Please try again later.
-      </p>
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-gray-500">Loading galleries...</p>
+      </div>
     );
   }
 
-  if (!galleries) {
+  if (error) {
+    return <p className="text-red-500">{error}</p>;
+  }
+
+  if (!galleries.length) {
     return <p className="text-gray-500">No galleries found.</p>;
   }
+
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
@@ -59,7 +99,8 @@ export default async function GalleryPage() {
               {gallery.images.map((image: string, index: number) => (
                 <div
                   key={index}
-                  className="relative h-72 rounded-lg overflow-hidden shadow-md"
+                  className="relative h-72 rounded-lg overflow-hidden shadow-md cursor-pointer"
+                  onClick={() => handleImageClick(image)}
                 >
                   <Image
                     src={image}
@@ -73,6 +114,21 @@ export default async function GalleryPage() {
           </div>
         ))}
       </div>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+          onClick={closeModal}
+        >
+          <Image
+            src={selectedImage}
+            alt="Full resolution view"
+            width={800} // Adjusted for full resolution
+            height={800} // Adjusted for full resolution
+            className="max-h-[85%] max-w-[85%]"
+          />
+        </div>
+      )}
     </section>
   );
 }
