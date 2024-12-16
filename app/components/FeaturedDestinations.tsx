@@ -28,7 +28,7 @@ export async function FeaturedDestinations() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#00145A]">
-              Regional Destinations
+              Domestic Destinations
             </h2>
           </div>
 

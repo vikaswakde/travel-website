@@ -8,14 +8,14 @@ export function Navbar() {
   return (
     <section id="navbar_hero" className="relative ">
       <div className="relative">
-        <nav className="container mx-auto px-4 py-8 flex justify-between items-center">
+        <nav className="container mx-auto px-4 py-12 flex justify-between items-center text-xl font-bold">
           <div className="flex items-center">
             <Image
-              src="/s.png"
+              src="/logo.png"
               alt="TravelScape Logo"
               width={150}
               height={150}
-              className="text-2xl font-bold w-[6rem] h-[6rem] md:h-[9.3rem] md:w-[9.3rem] text-primary-600 object-cover absolute md:-top-6"
+              className="text-2xl font-bold w-[8rem] h-[8rem] md:h-[13.3rem] md:w-[13.3rem] text-primary-600 object-cover absolute md:-top-6"
             />
           </div>
 

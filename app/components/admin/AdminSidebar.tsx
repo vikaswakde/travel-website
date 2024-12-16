@@ -18,7 +18,7 @@ export function AdminSidebar() {
     { href: "/admin", label: "Dashboard" },
     { href: "/admin/hero-images", label: "Hero Images" },
     { href: "/admin/discount-banners", label: "Discount Banner" },
-    { href: "/admin/destinations", label: "Regional Destinations" },
+    { href: "/admin/destinations", label: "Domestic Destinations" },
     {
       href: "/admin/international-destinations",
       label: "International Destinations",

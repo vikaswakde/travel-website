@@ -155,11 +155,16 @@ const BookNow = () => {
               <MapPinIcon className="text-primary-600 w-5 h-5" />
             </div>
             <div>
-              <p className="font-semibold text-gray-900">Visit Us</p>
-              <p className="text-sm text-gray-600">
-                {" "}
-                211/1557 NR Shani Mandir, <br /> Sant Tukaram Nagar, Pimpri
-              </p>
+              <a
+                href="https://maps.app.goo.gl/agrDcaAAJ3SiPcVY8"
+                target="_blank"
+              >
+                <p className="font-semibold text-gray-900">Visit Us</p>
+                <p className="text-sm text-gray-600">
+                  {" "}
+                  211/1557 NR Shani Mandir, <br /> Sant Tukaram Nagar, Pimpri
+                </p>
+              </a>
             </div>
           </a>
         </div>

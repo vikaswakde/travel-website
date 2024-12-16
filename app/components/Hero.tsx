@@ -29,7 +29,15 @@ export function Hero() {
   if (heroImages.length === 0) return null;
 
   return (
-    <section id="navbar_hero" className="relative">
+    <section id="navbar_hero" className="relative  min-h-screen py-[10rem]">
+      <div className="w-full mx-auto absolute top-0  rounded-3xl text-black">
+        <h2 className="text-center text-4xl md:text-[3.2rem] font-bold pt-[5rem]">
+          Welcome to
+          <span className="bg-yellow-400 p-1 ml-1 rounded-sm shadow-md">
+            Suparnam Holidays!
+          </span>
+        </h2>
+      </div>
       <div className="container mx-auto px-4 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
@@ -71,7 +79,7 @@ export function Hero() {
                 alt={heroImages[currentImage].title}
                 width={600}
                 height={400}
-                className="relative rounded-2xl shadow-lg"
+                className="relative rounded-2xl shadow-xl"
                 priority={true}
               />
             </div>

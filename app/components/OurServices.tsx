@@ -46,7 +46,7 @@ const OurServices = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#00145A] max-w-2xl mx-auto">
-            Discovery Holidays: Where Luxury Meets Adventure
+            Suparnam Holidays: Your Dream, Our Destination
           </h2>
         </div>
 
