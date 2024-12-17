@@ -206,6 +206,16 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>© 2024 Suparnam Holidays. All rights reserved.</p>
+          <p className="mt-4">
+            <a
+              href="https://collabcraze.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Made with ❤️ by CollabCraze Tech
+            </a>
+          </p>
         </div>
       </div>
     </footer>

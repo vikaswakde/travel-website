@@ -30,7 +30,7 @@ export function Hero() {
 
   return (
     <section id="navbar_hero" className="relative  min-h-screen py-[10rem]">
-      <div className="w-full mx-auto absolute top-0  rounded-3xl text-black">
+      <div className="w-full mx-auto absolute -top-[1rem] md:top-[3rem]  rounded-3xl text-black">
         <h2 className="text-center text-4xl md:text-[3.2rem] font-bold pt-[5rem] md:py-0">
           Welcome to
           <span className="md:hidden">

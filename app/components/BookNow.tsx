@@ -129,6 +129,7 @@ const BookNow = () => {
             <div>
               <p className="font-semibold text-gray-900">Call Us</p>
               <p className="text-sm text-gray-600">+91 9175982377</p>
+              <p className="text-sm text-gray-600">+91 9823025308</p>
             </div>
           </a>
 
